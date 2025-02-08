@@ -25,7 +25,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src/devices/item)
 include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${CMAKE_SOURCE_DIR}/src/win)
 #include_directories(/usr/include/eigen3)
-include_directories(${CMAKE_SOURCE_DIR}/src/eigen3)
+include_directories(${CMAKE_SOURCE_DIR}/eigen3)
 set(SOURCES
 ${CMAKE_SOURCE_DIR}/src/main.cpp  
 ${CMAKE_SOURCE_DIR}/src/console/helper.cpp 
