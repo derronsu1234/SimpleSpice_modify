@@ -6,8 +6,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -O2 -Wall -W -D_REENTRANT -fPIC")
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -O2 -Wall -W -D_REENTRANT -fPIC -DSTYLES_DIR=${CMAKE_SOURCE_DIR}/styles")
 add_definitions(-DSTYLES_DIR=${CMAKE_SOURCE_DIR}/styles)
 #add_definitions(-DSTYLES_DIR="/home/SimpleSpice-master/styles" -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_SVG_LIB -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB)
-#find_package(Qt5 COMPONENTS Widgets PrintSupport Core Gui Qml Svg Charts REQUIRED)
-#find_package(Qt5 COMPONENTS PrintSupport Svg Charts Widgets Gui Qml Network Core REQUIRED)
+find_package(Qt5 COMPONENTS Widgets PrintSupport Core Gui Qml Svg Charts REQUIRED)
+find_package(Qt5 COMPONENTS PrintSupport Svg Charts Widgets Gui Qml Network Core REQUIRED)
 
 find_package(OpenGL REQUIRED)
 find_package(Threads REQUIRED)
@@ -26,7 +26,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src/devices/item)
 include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${CMAKE_SOURCE_DIR}/src/linux)
 include_directories(/usr/include/eigen3)
-#include_directories(C:/msys64/mingw64/include/eigen3)
+include_directories(C:/msys64/mingw64/include/eigen3)
 # 源文件和头文件
 set(SOURCES
 ${CMAKE_SOURCE_DIR}/src/main.cpp  
@@ -110,6 +110,6 @@ ${QT_PATH}/lib/libQt5Core.so
 
 # 添加可执行文件
 add_executable(${PROJECT_NAME} ${SOURCES} )
-#target_link_libraries(${PROJECT_NAME} Qt5::PrintSupport Qt5::Svg Qt5::Charts Qt5::Widgets Qt5::Gui Qt5::Qml Qt5::Network Qt5::Core)
-target_link_libraries(${PROJECT_NAME} ${QT_SOURCES})
+target_link_libraries(${PROJECT_NAME} Qt5::PrintSupport Qt5::Svg Qt5::Charts Qt5::Widgets Qt5::Gui Qt5::Qml Qt5::Network Qt5::Core)
+#target_link_libraries(${PROJECT_NAME} ${QT_SOURCES})
 #install(TARGETS ${PROJECT_NAME} DESTINATION bin)  

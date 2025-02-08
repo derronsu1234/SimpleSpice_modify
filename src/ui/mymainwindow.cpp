@@ -26,7 +26,7 @@
 
 #define _STR(x) #x
 #define STRINGIFY(x)  _STR(x)
-
+/*
 void MyMainWindow::updateThemeColorButtons()
 {
     for (auto Button : ThemeColorButtons)
@@ -38,7 +38,7 @@ void MyMainWindow::updateThemeColorButtons()
         Button->setStyleSheet(ButtonStylesheet);
     }
 }
-
+*/
 MyMainWindow::MyMainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -46,6 +46,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     qDebug() << STRINGIFY(STYLES_DIR);
     QString AppDir = qApp->applicationDirPath();
     QString StylesDir = STRINGIFY(STYLES_DIR);
+    /*
     AdvancedStyleSheet = new acss::QtAdvancedStylesheet(this);
     AdvancedStyleSheet->setStylesDirPath(StylesDir);
     AdvancedStyleSheet->setOutputDirPath(AppDir + "/output");
@@ -55,7 +56,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     //setWindowIcon(AdvancedStyleSheet->styleIcon());
     qApp->setStyleSheet(AdvancedStyleSheet->styleSheet());
     connect(AdvancedStyleSheet, SIGNAL(stylesheetChanged()), this,
-        SLOT(onStyleManagerStylesheetChanged()));
+        SLOT(onStyleManagerStylesheetChanged()));*/
     setWindowTitle(tr("SimpleSpice"));
 
     console = new MyConsole(ui.consoleText);
@@ -70,8 +71,8 @@ MyMainWindow::~MyMainWindow()
 
 void MyMainWindow::onStyleManagerStylesheetChanged()
 {
-    qApp->setStyleSheet(AdvancedStyleSheet->styleSheet());
-    updateThemeColorButtons();
+    ///qApp->setStyleSheet(AdvancedStyleSheet->styleSheet());
+    //updateThemeColorButtons();
 }
 
 void MyMainWindow::on_actionNew_triggered()
